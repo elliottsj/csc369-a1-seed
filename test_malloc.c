@@ -34,8 +34,9 @@ void *max_heap = 0;
  * allocated because using the libc malloc would interfere
  * using mymalloc.
  */
+enum operation { MALLOC, FREE };
 struct trace_op {
-    enum {MALLOC, FREE} type;
+    enum operation type;
     int index; // for myfree() to use later
     int size;
 };
